@@ -1,0 +1,15 @@
+Total Occupents <%= @characters.length =%>
+
+<h1>Characters</h1>
+<% @characters[0..24].each do |character| %>
+  <h3><%= character.name %></h3>
+  Affiliation: <%= character.affiliation =%>
+  <br>
+  Allies: <% character.allies.each do |ally| %>
+    <%= ally %>
+  <% end %>
+  <br>
+  Enemies: <% character.enemies.each do |enemy| %>
+    <%= enemy %>
+  <% end %>
+<%end%>
