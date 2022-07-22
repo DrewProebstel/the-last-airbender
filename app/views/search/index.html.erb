@@ -3,13 +3,26 @@ Total Occupents <%= @characters.length =%>
 <h1>Characters</h1>
 <% @characters[0..24].each do |character| %>
   <h3><%= character.name %></h3>
+  <% if character.photoUrl != nil%>
+  <img  src="<%=character.photoUrl%>" width="400" height="500"><br><br>
+  <% end %>
   Affiliation: <%= character.affiliation =%>
   <br>
-  Allies: <% character.allies.each do |ally| %>
-    <%= ally %>
+  Allies:
+  <% if character.allies.length > 0 %>
+    <% character.allies.each do |ally| %>
+      <%= ally %>
+    <% end %>
+  <% else %>
+    none
   <% end %>
   <br>
-  Enemies: <% character.enemies.each do |enemy| %>
-    <%= enemy %>
+  Enemies:
+  <% if character.enemies.length > 0 %>
+    <% character.enemies.each do |enemy| %>
+      <%= enemy %>
+    <% end %>
+  <% else %>
+    none
   <% end %>
 <%end%>
