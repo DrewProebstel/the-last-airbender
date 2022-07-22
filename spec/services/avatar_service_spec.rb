@@ -8,7 +8,6 @@ RSpec.describe AvatarService do
       expect(parsed_json).to be_a Array
 
       first_character = parsed_json.first
-      binding.pry
 
       expect(first_character.keys).to include :allies, :enemies, :name, :affiliation
       expect(first_character[:allies]).to be_a Array
